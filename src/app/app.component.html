@@ -1,28 +1,12 @@
 <div class="container">
   <h1>{{titulo}}</h1>
-  <form>
-    <div class="form-group">
-      <label>Operando A</label>
-      <input
-          type="number"
-          class="form-control"
-          placeholder="Escribe Operando A"
-          name="operandoA"
-          [(ngModel)]="operandoA">
-    </div>
-    <div class="form-group">
-      <label>Operando B</label>
-      <input
-          type="number"
-          class="form-control"
-          placeholder="Escribe Operando B"
-          name="operandoB"
-          [(ngModel)]="operandoB">
-    </div>
-      <button class="btn btn-primary" (click)="sumar()" type="submit">Sumar</button>
-      <button class="btn btn-primary" (click)="restar()" type="submit">Restar</button>
-      <button class="btn btn-primary" (click)="multiplicar()" type="submit">Multiplicar</button>
-      <button class="btn btn-primary" (click)="dividir()" type="submit">Dividir</button>
-  </form>
-  <h2>Resultado: {{resultado}}</h2>
+<!--  -->
+  <app-formulario
+  (resultadoCreado)="actualizarResultado($event)"
+  >
+  </app-formulario>
+  <hr>
+  <app-resultado
+    [resultado]="resultado"
+  ></app-resultado>
 </div>
